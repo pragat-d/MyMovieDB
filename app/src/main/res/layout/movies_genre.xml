@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/movieGenreToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/purple_500"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/genre_movies_toolbar_layout"
+        app:navigationIcon="?attr/homeAsUpIndicator">
+
+
+        <TextView
+            android:id="@+id/movieGenrePageTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Page Title"
+            android:textSize="25dp"
+            android:visibility="visible" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/genreMovieRecycleView"
+        app:layout_constraintBottom_toTopOf="@id/loadingEndlessScroll"
+        app:layout_constraintTop_toBottomOf="@id/movieGenreToolbar"/>
+
+    <ProgressBar
+        android:layout_width="30dp"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/genreMovieRecycleView"
+        android:visibility="gone"
+        android:id="@+id/loadingEndlessScroll"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
